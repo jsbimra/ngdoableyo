@@ -1,0 +1,22 @@
+
+<div class="float-left"><h1><a href="/">{{logo}}</a></h1></div>
+
+<div class="float-right">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item href="/home">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+    <a mat-menu-item href="/:#adPanel">
+      <mat-icon>subject</mat-icon>
+      <span>Ads</span>
+    </a>
+    <a mat-menu-item href="/contact">
+      <mat-icon>notifications_off</mat-icon>
+      <span>Contact</span>
+    </a>
+  </mat-menu>
+</div>

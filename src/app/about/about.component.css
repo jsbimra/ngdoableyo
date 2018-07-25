@@ -1,0 +1,20 @@
+
+.about-card {
+    background: #0a153c;
+    padding: 15px !important;
+    margin: 0;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    border-color: #6700de21;
+    border-style: solid;
+    border-width: 1px;
+}
+
+h3 {
+    font-family: 'Raleway',sans-serif;
+    margin-top: 30px;
+    font-weight: 100;
+    /* text-transform: uppercase; */
+    margin-bottom: 30px;
+}
