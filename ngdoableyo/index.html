@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
@@ -9,12 +9,24 @@
   <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
   
   <meta charset="utf-8">
-  <title>NgDoableYo</title>
-  <base href="/ngdoableyo/ngdoableyo/">
+  <title>Learning App</title>
+  <base href="/ngdoableyo/ngdoableyo/">  <!-- <base href="/"> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+      // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
 <link rel="stylesheet" href="styles.792d36bb6e2a0cb9ec7b.css"></head>
 <body>
   <app-root></app-root>
-<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.7a0e6866a34e280f48e7.js"></script><script type="text/javascript" src="main.7ba06783d8b4244d3a76.js"></script></body>
+<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.7a0e6866a34e280f48e7.js"></script><script type="text/javascript" src="main.b74763871d327919ffa4.js"></script></body>
 </html>
