@@ -1,8 +1,11 @@
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ModalModule } from 'angular-custom-modal';
 import { MaterialModule } from './shared/material.module';
+
 import { AppComponent }         from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -12,6 +15,7 @@ import { HeaderNavComponent } from './layout/header-nav/header-nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
 import { ContactComponent } from './contact/contact.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   imports:      [
@@ -19,9 +23,12 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     MaterialModule,
     HomeModule,
+    ModalModule,
+    FormsModule, 
+    ReactiveFormsModule
 
   ],
-  declarations: [ AppComponent, HeaderComponent, FooterComponent, HeaderNavComponent, ContactComponent,  ],
+  declarations: [ AppComponent, HeaderComponent, FooterComponent, HeaderNavComponent, ContactComponent, FeedbackComponent,  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  @Input() logo = "Learning App!";
+  @Input() logo = "Launcher!";
 
   ngOnInit() {
   }

@@ -1,0 +1,28 @@
+<p>Form Status: {{feedbackForm.status}}</p>
+<form [formGroup]="feedbackForm" class="feedback-form" (ngSubmit)="onSubmit()">
+    <p>
+      <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter your Name">
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter your email">
+          <mat-icon matSuffix>markunread_mailbox</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Feedback comments</mat-label>
+          <textarea matInput formControlName="message" placeholder="Type your feedback"></textarea>
+          <mat-icon matSuffix>feedback</mat-icon>
+        </mat-form-field>
+      </p>
+      <p class="text-center">
+        <button type="submit" value="" mat-raised-button color="accent" [disabled]="!feedbackForm.valid">Submit</button>
+      </p>
+</form>

@@ -16,7 +16,7 @@ import { HorizontalAdsComponent } from '../horizontal-ads/horizontal-ads.compone
     declarations: [
         HomeComponent,    
         AboutComponent,
-        HorizontalAdsComponent 
+        HorizontalAdsComponent,
     ]
 })
 

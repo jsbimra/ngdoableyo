@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 
-import { MatGridListModule, MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatDividerModule } from '@angular/material';
+import { MatDialogModule, MatGridListModule, MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatDividerModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule( {
     imports: [
@@ -22,6 +22,9 @@ import { MatGridListModule, MatCardModule, MatToolbarModule, MatButtonModule, Ma
         MatMenuModule,
         MatDividerModule,
         MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDialogModule
     ]
 })
 

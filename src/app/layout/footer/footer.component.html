@@ -8,5 +8,15 @@
 
         <span>2018</span>
     </mat-toolbar> -->
-    <cite class="float-left">© 2018 -. All rights reserved.</cite> <strong> </strong> <div class="float-right"><a href="privacy-policy.php" target="_blank">Privacy Policy</a></div>
+    <cite class="float-left">DoableYo © 2018 -. All rights reserved.</cite> 
+    <div class="float-right">
+        <a (click)="feedbackModal.open()" target="_blank">Feedback</a> | <a href="privacy-policy.php" target="_blank">Privacy Policy</a></div>
 </footer>
+
+<modal #feedbackModal>
+    <ng-template #modalHeader><h4>Your feedback is valuable to us!</h4></ng-template>
+    <ng-template #modalBody>
+        <feedback></feedback>
+    </ng-template>
+    <ng-template #modalFooter class="text-center">Thank you!</ng-template>
+</modal>
