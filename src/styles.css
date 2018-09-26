@@ -2,8 +2,8 @@
 
 /* Importing angular material style theme */
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.css";
+
+/* @import "~font-awesome/css/font-awesome.css"; */
 
 html, body { height: 100%; }
 /******************************************************************************************************************************
@@ -63,7 +63,12 @@ HEADER
 *******************************************************************************************************************************/
 .header-fluid {
     /*background: #eee;*/
-    /* border-bottom: 1px solid #FDC02F; */
+    border-bottom: 1px solid #FDC02F;
+    clear:both;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 #header{
@@ -93,30 +98,8 @@ HEADER
     color: #FFC107; /*#00b4ff*/
 }
 
-.timer_box{
-    margin: 35px 24px;
-    display: inline-block;
-    padding: 20px 12px 0 12px;
-    text-align: center;
-    width: 130px;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, .6);
-}
-.timer_box h1{
-    font-size: 48px;
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: white;
-}
-.timer_box p{ margin-top: 0;}
-#layer{
-    /*background-color: rgba(0, 0, 0, .2);*/
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 1;
+.top-right-menu{
+    margin-top: 25px;
 }
 
 .banner{
@@ -142,6 +125,7 @@ HEADER
     clear: both;
     overflow: hidden;
 }
+
 .user-msg{
 	background: #0a153c; /*#2C3144*/
 	padding: 15px !important;
@@ -156,11 +140,11 @@ HEADER
 
 footer{
     font-size:.8rem;
-    color: #212529;
-    background: #eeefed;  /*#442b2b;*/
+    color: #fff;
+    background: #614E38;  /*#442b2b;*/
     
     padding: 30px 50px;
-    margin-top: 20px;
+    margin-top: 0;
     /*min-height:200px;*/
 }
 
@@ -169,32 +153,37 @@ footer + img {
     display: none;
 }
 
-footer a, footer a:hover{
-    color: #212529;
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #fff;
 }
 
 .sticky-footer{
-	/* position: fixed; */
+	position: fixed;
 	width:100%;
 	bottom:0;
 }
 
 .cookie-notify {
-    color: #ffffff;
-    background-color: rgba(148, 72, 5, .9);
+    color: #080400;
+    /* background-color: rgba(241, 122, 17, 0.85); */
+    background-color: rgba(228, 227, 225, 0.6);
     border-color: transparent;
     border-radius: 0;
     /* opacity: .7; */
-    width: 250px;
-    right: 15px;
-    bottom: 1rem;
-    top: auto;
-    left: auto;
-    margin-bottom:0;
+    margin-bottom: 0;
+    width: 100%;
+    z-index: 1;
+    left: -100%;
+    position: relative;
+    animation: cookieNotifyAnimate 1s forwards 1s linear;
 }
 
 .cookie-notify a{
-    color: #ffffff;
+    color: #080400;
 }
 
 .horizontal-ad-flyer {
@@ -213,22 +202,71 @@ footer a, footer a:hover{
 .fixed-sideleft-flyer-amazon, .fixed-sideright-flyer-amazon{
     top: 73px;
 }
+/******************************************************************************************************************************
+BOOTSTRAP STYLE OVERWRITE
+*******************************************************************************************************************************/
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/******************************************************************************************************************************
+ANIMATION STYLES
+*******************************************************************************************************************************/
+@keyframes cookieNotifyAnimate{
+    0%{
+        /* transform: translateX(-100px); */
+        left: -100%;
+    }
+    25%{
+        left: -75%;
+        /* transform: translateX(-75%); */
+    }
+    50%{
+        left: -50%;
+        /* transform: translateX(-50%); */
+    }
+    75%{
+        left: -25%;
+        /* transform: translateX(-25%); */
+    }
+    100%{
+        left: -0%;
+        /* transform: translateX(0px) translateY(0); */
+        margin: 0;
+    }
+}
+
+@keyframes logoAnimation{
+    0%{
+        transform: rotate(0deg) translateX(0) translateY(-80px);
+    }
+    25%{
+        transform: rotate(0deg) translateX(100px) translateY(-55px);
+    }
+    50%{
+        transform: rotate(0deg) translateX(0) translateY(-30px);
+    }
+    75%{
+        transform: rotate(0deg) translateX(100px) translateY(0);
+    }
+    100%{
+        transform: rotate(0deg) translateX(0px) translateY(0);
+        }
+}
+
+.logo{
+    animation: logoAnimation .5s forwards 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
 
 /******************************************************************************************************************************
 RESPONSIVE
 *******************************************************************************************************************************/
 @media only screen and (max-width: 640px) {
-    .timer_box{ margin: 0 12px 12px 0;}
-    .tp-bullets{display: none;}
+    
     #header .container{padding: 20px 0 20px 0}
     #header-button{ display: none;}
-    #appendedInputButtons{
-        border-radius: 20px;
-        margin-bottom: 25px;
-    }
-    #slider{display: none;}
-    .btn-subscribe{border-radius: 20px;}
-    #contact-informations{margin-top: 24px;}
     
     .d-sm-none, .d-xs-none {display: none;}
    

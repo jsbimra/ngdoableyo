@@ -4,12 +4,6 @@
   top: 0;
 }
 
-footer {
-  position: sticky;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox. 
      Every toolbar row uses a flexbox row layout. */
