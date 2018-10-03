@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { FeedbackService } from '../feedback/feedback.service';
+
 import { Component, OnInit, NgModule } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'feedback',
@@ -11,10 +14,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class FeedbackComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private router: Router, private fservice : FeedbackService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    console.log(this.fservice);
   }
+
 
   feedbackForm = this.fb.group({
       name: ['', Validators.required],
@@ -23,13 +28,22 @@ export class FeedbackComponent implements OnInit {
   });
 
   onSubmit(){
+
+    console.log(this.fservice);
+
     console.log('Submit Triggered');
-    console.warn(this.feedbackForm);
+    console.warn(this.feedbackForm.value);
 
     if(this.feedbackForm.valid){
       console.log('Form is good to submit!!');
+      this.fservice.postFeedback(this.feedbackForm.value)
+        .subscribe(res => {
+          console.log('Form posted succesfully to db! ')
+        }, (err) => {
+          console.log(err);
+        })
     }else {
-      console.log('Still form need to be baked!!');
+      console.error('Validation Error: ', 'Still form need to be baked!!');
     }
   }
 

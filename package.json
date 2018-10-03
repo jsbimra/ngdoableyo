@@ -1,9 +1,9 @@
 {
-  "name": "ngdoableyo",
+  "name": "ngtestdoyo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build && node ./bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,12 +22,19 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-material-design": "^4.1.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "http-errors": "^1.7.1",
+    "mongoose": "^5.3.0",
+    "morgan": "^1.9.1",
     "ngx-bootstrap": "^3.0.1",
+    "ngx-page-scroll": "^5.0.0",
     "rxjs": "^6.0.0",
+    "serve-favicon": "^2.5.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

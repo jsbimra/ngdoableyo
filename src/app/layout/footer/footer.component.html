@@ -1,20 +1,24 @@
 
-<footer class="text-center clearfix">
-    <!-- <mat-toolbar color="transparent">
-        <span>&copy;</span>
+<div class="clearfix footer-container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+            <ul>
+                <li><a href="privacy-policy">Privacy Policy</a></li>
+                <li><a (click)="feedbackModal.open()" target="_blank">Feedback</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer-disclaimer">
+    <div class="row">
+        <div class="col"><cite>DoableYo © 2018 - All rights reserved.</cite></div>
+    </div>
+</div>
 
-        - This fills the remaining space of the current row - 
-        <!-- <span class="example-fill-remaining-space">Thanks for coming!</span>
-
-        <span>2018</span>
-    </mat-toolbar> -->
-    <cite class="float-left">DoableYo © 2018 -. All rights reserved.</cite> 
-    <div class="float-right">
-        <a (click)="feedbackModal.open()" target="_blank">Feedback</a> | <a href="privacy-policy.php" target="_blank">Privacy Policy</a></div>
-</footer>
-
-<modal #feedbackModal>
-    <ng-template #modalHeader><h4>Your feedback is valuable to us!</h4></ng-template>
+<modal #feedbackModal class="feedback-modal-wrap">
+    <ng-template #modalHeader><h4>Feedback</h4></ng-template>
     <ng-template #modalBody>
         <feedback></feedback>
     </ng-template>

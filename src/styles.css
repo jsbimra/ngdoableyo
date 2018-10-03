@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway";
     font-weight: 300;
     color: #0c1b52;
+    line-height: 1.4em;
 }
 
 h4 {
@@ -43,7 +44,9 @@ h1{
 	font-size: 60px;
 }
 
-h2{ color: #0a153c;}
+h2{ 
+    color: #002bc3;
+}
 
 a:hover, a:focus {
     -webkit-transition-duration: 0.4s;
@@ -63,13 +66,27 @@ HEADER
 *******************************************************************************************************************************/
 .header-fluid {
     /*background: #eee;*/
-    border-bottom: 1px solid #FDC02F;
+    border-bottom: 2px solid #FFC107;
+    /* border-top: 1px solid #0c1b52; */
     clear:both;
     margin-left: 0;
     margin-right: 0;
     padding-left: 24px;
     padding-right: 24px;
+    margin-bottom: 15px;
+    /* margin-top: 3px; */
 }
+/* 
+.header-fluid:before {
+    content: '';
+    position: relative;
+    top: 0;
+    height:3px;
+    margin-left: -25px;
+    margin-right: -25px;
+    display:block;
+    background:#FFC107;
+} */
 
 #header{
     padding: 0 0 0;
@@ -138,26 +155,35 @@ HEADER
 	border-width: 1px;
 }
 
-footer{
-    font-size:.8rem;
+.footer-container{
     color: #fff;
-    background: #614E38;  /*#442b2b;*/
-    
-    padding: 30px 50px;
+    background: #007a7d;  /*#442b2b;*/
+    border-top: 3px solid #FFC107;
+
+    padding: 30px 15px;
     margin-top: 0;
     /*min-height:200px;*/
 }
 
-/* Hide adjance images after footer tag or siblings one's */
-footer + img {
-    display: none;
-}
-
-footer a{
+.footer-disclaimer{
+    text-align: right;
+    font-size:.8rem;
+    padding: 3px 15px;
+    background-color: #b34f4f;
     color: #fff;
 }
 
-footer a:hover{
+/* Hide adjance images after footer tag or siblings one's */
+.footer-container + img {
+    display: none;
+}
+
+.footer-container a{
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-container a:hover{
     color: #fff;
 }
 
@@ -178,7 +204,9 @@ footer a:hover{
     width: 100%;
     z-index: 1;
     left: -100%;
-    position: relative;
+    position: fixed;
+    bottom:0;
+    height: 48px;
     animation: cookieNotifyAnimate 1s forwards 1s linear;
 }
 
@@ -202,6 +230,16 @@ footer a:hover{
 .fixed-sideleft-flyer-amazon, .fixed-sideright-flyer-amazon{
     top: 73px;
 }
+
+.block-doable-yo-one {
+  background-color: #8a8a8a14;
+  padding: 35px 20px;
+  min-height: 300px;
+}
+
+.block-doable-yo-one h2{
+    color: #008ef9db;
+}
 /******************************************************************************************************************************
 BOOTSTRAP STYLE OVERWRITE
 *******************************************************************************************************************************/
@@ -210,6 +248,18 @@ BOOTSTRAP STYLE OVERWRITE
     padding-right: 0;
 }
 
+.main-wrapper-card {
+    margin: 30px 25px;
+}
+.main-wrapper-card mat-card-content h2 {
+    margin-top: 0;
+}
+
+.btn-primary {
+  color: #1b1818;
+  background-color: #ffee00;
+  border-color: #f7ec02;
+}
 
 /******************************************************************************************************************************
 ANIMATION STYLES
@@ -255,10 +305,10 @@ ANIMATION STYLES
         transform: rotate(0deg) translateX(0px) translateY(0);
         }
 }
-
+/* 
 .logo{
     animation: logoAnimation .5s forwards 1s cubic-bezier(0.77, 0, 0.175, 1);
-}
+} */
 
 /******************************************************************************************************************************
 RESPONSIVE
@@ -272,7 +322,7 @@ RESPONSIVE
    
 }
 @media only screen and (max-width: 740px) {
-    .cookie-notify {
+    /* .cookie-notify {
         width: 250px;
         right: 15px;
         bottom: 0;
@@ -291,5 +341,5 @@ RESPONSIVE
     .cookie-notify {
         position: static;
         width: 100%;
-    }
+    } */
 }

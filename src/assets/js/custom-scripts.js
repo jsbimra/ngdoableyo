@@ -59,16 +59,29 @@ ANIMATIONS
     
     $(document).ready(function(){
         
-        //cookie close bar
+        //if cookieNotifyClosedFlag set don't show notify message:
+        if(localStorage.getItem('doyo.cookieNotifyClosedFlag')) {
+            $('.jsCookieNotify').hide();
+        }
+         //cookie close bar
         $(document).on('click', '.jsCloseCookie', function () {
-            $(this).parents('.jsCookieNotify').slideUp();
-            DM.resetTopHeaderStyle();
+            if(!localStorage.getItem('doyo.cookieNotifyClosedFlag')) {
+                $(this).parents('.jsCookieNotify').slideUp();
+                localStorage.setItem('doyo.cookieNotifyClosedFlag', true);
+            }
+            // DM.resetTopHeaderStyle();
         });
         
         //Check if cookie notify element is in dom or not
         if(!$('.jsCloseCookie').length) {
-            DM.resetTopHeaderStyle();
+            // DM.resetTopHeaderStyle();
         }
+
+        // window.onbeforeunload = function() {
+        //     if(localStorage.getItem('doyo.cookieNotifyClosedFlag')) {
+        //         localStorage.clear('doyo.cookieNotifyClosedFlag');
+        //     }
+        // }
     });
 
     
